@@ -1,0 +1,5 @@
+{
+  "name": "make-installer",
+  "description": "Creates an installer from a packaged app.",
+  "flags": []
+}

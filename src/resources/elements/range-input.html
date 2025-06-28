@@ -1,0 +1,4 @@
+<template bindable="value, min, max, step, disabled" class="${disabled ? 'disabled' : ''}">
+    <input type="range" min.bind="min" max.bind="max" step.bind="step" value.bind="value">
+    <label>${value || 0}</label>
+</template>

@@ -1,0 +1,21 @@
+@import "../../constants";
+
+sidebar {
+	display: flex;
+	flex-flow: column;
+	width: $sidebarWidth;
+	min-width: $sidebarWidth;
+	height: calc(100vh - #{$headerHeight});
+	background: #001233;
+	position: relative;
+
+	games {
+		position: relative;
+		left: 0;
+		height: 100%;
+	}
+
+	support {
+		padding-bottom: 0px;
+	}
+}

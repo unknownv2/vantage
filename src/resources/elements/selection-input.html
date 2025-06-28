@@ -1,0 +1,6 @@
+<template class="${opened ? 'opened' : ''} ${disabled ? 'disabled' : ''}">
+    <div click.delegate="open()" class="selection-value">${value || '---'}</div>
+    <ul class="selection-options">
+        <li repeat.for="option of options" click.delegate="setValue(option)">${option}</li>
+    </ul>
+</template>

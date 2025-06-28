@@ -1,0 +1,21 @@
+<template>
+    <require from="./games.css"></require>
+
+    <header>Mods</header>
+
+    <div class="games">
+		<a repeat.for="editor of editorManager.editors | sort:'game'" route-href="route: editor; params.bind: {id: editor.id}" class="game ${router.currentInstruction.config.name === 'editor' && router.currentInstruction.params.id == editor.id ? 'highlight' : ''}">
+			<div>
+				<img src.bind="editor.thumbnailUrl" style="width: 32px">
+				<div class="label">
+					${editor.game}
+					<div class="editor-name">${editor.provider === 'disk' ? 'Local Project' : editor.name}</div>
+				</div>
+			</div>
+		</a>
+
+		<button class="add-game-button" click.delegate="addGame()">
+			<inline-svg src="icons/plus.svg"></inline-svg>
+		</button>
+	</div>
+</template>

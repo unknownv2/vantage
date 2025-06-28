@@ -1,0 +1,81 @@
+<template>
+    <require from="./editor.css"></require>
+    
+    <div class="editor">
+        <div class="editor-header">
+            <div class="thumbnail"><img src.bind="editorInfo.thumbnailUrl"></div>
+            <div click.delegate="manage()" class="title">
+                ${editorInfo.game}
+                <div class="editor-name">${editorInfo.name} by ${editorInfo.author}</div>
+            </div>
+            <div if.bind="editorInitialized" class="actions">
+                <div class="select ${fileSelectorOpen ? 'open' : ''}" close-if-click-outside.two-way="fileSelectorOpen">
+                    <div class="value-wrapper">
+                        <div class="value" click.delegate="toggleFileSelector()">${selectedFile ? selectedFile.name : 'Select a file...'}</div>
+                        <i class="select-arrow"><inline-svg src="icons/caret-down.svg"></inline-svg></i>
+                    </div>
+
+                    <div class="dropdown">
+                        <div class="column local">
+                            <header>
+                                <img src="static/images/local-saves.svg">
+                                <span>Local Saves</span>
+
+                                <button click.delegate="openLocalFile()" class="right">Open</button>
+                            </header>
+
+                            <div class="empty" if.bind="localFiles.length === 0">
+                                No history
+                            </div>
+
+                            <div class="container">
+                                <header>
+                                    <span>Recent</span>
+
+                                    <span if.bind="localFiles.length > 0">
+                                        <a href="#" click.delegate="clearLocalSaves()">Clear</a>
+                                    </span>
+                                </header>
+
+                                <template repeat.for="file of localFiles | sort:'lastUsed' | reverse">
+                                    <button class="file ${file == selectedFile ? 'selected' : ''}" click.delegate="loadLocalSave(file)">
+                                        <div class="info">
+                                            <div class="name">
+                                                ${file.path | limitPath:50}
+                                            </div>
+
+                                            <div class="meta">
+                                                ${file.size | byteFormat}
+                                                <span class="bullet">•</span>
+                                                ${file.lastUsed | relativeTime}
+                                            </div>
+                                        </div>
+                                        <div class="actions">
+                                            <a href="#" click.delegate="removeLocalSave(file, $event)">
+                                                <i><inline-svg src="icons/close.svg"></inline-svg></i>
+                                            </a>
+                                        </div>
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button disabled.bind="!editorLoaded" class="action-button" click.trigger="save()">Save</button>
+            </div>
+        </div>
+
+        <div class="categories">
+            <webview 
+                class="editor-frame"
+                ref="frame" 
+                focus.trigger="editorFocused($event)"
+                partition.bind="editorInfo.partition"
+                preload="./editor-bridge.js"
+                src="${editorLocation}/index.html"></webview>
+        </div>
+    </div>
+
+    <status-tip if.bind="status === 'loading'" title="Reading..." message="Reading your saved game file..."></status-tip>
+    <status-tip if.bind="status === 'saving'" title="Saving..." message="Saving your saved game file..."></status-tip>
+</template>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="14" height="14" viewBox="0, 0, 14, 14">
+  <g id="Vantage">
+    <path d="M4.87,2.2 L3.652,1 L0.609,1 C0.272,1 0,1.268 0,1.6 L0,11.8 C0,12.463 0.545,13 1.217,13 L12.783,13 C13.455,13 14,12.463 14,11.8 L14,3.4 C14,2.737 13.455,2.2 12.783,2.2 L4.87,2.2 z" fill="#F9D44C" id="Shape"/>
+    <path d="M14,4 L0,4 L0,1.6 C0,1.268 0.272,1 0.609,1 L3.652,1 L4.87,2.2 L12.783,2.2 C13.455,2.2 14,2.737 14,3.4 L14,4 z" fill="#C7AA3D" id="Shape"/>
+  </g>
+</svg>

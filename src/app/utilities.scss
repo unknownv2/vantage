@@ -1,0 +1,60 @@
+.hide {
+    display: none !important;
+}
+
+.clearfix {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin custom-scrollbar($bg: #142328, $fg: #295666) {
+    &::-webkit-scrollbar {         
+        background-color: $bg;
+        width: 10px;
+        box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive,
+    &::-webkit-scrollbar-thumb {
+        background: $fg;
+
+        &:hover {
+            background: lighten($fg, 5%);
+        }
+    }
+}
+
+@mixin vertical-highlight($color: #fff) {
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        bottom: 50%;
+        width: 4px;
+        background: $color;
+        z-index: 1;
+        opacity: 0;
+        transition: top 0.3s, bottom 0.3s, opacity 0.15s;
+    }
+
+    &:hover, &.highlight {
+        &:before {
+            top: 0;
+            bottom: 0;
+            opacity: 1;
+        }
+    }
+}

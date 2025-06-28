@@ -1,0 +1,1 @@
+define('http', function() { return window.nodeRequire('http'); });

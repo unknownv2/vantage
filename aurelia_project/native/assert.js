@@ -1,0 +1,1 @@
+define('assert', function() { return window.nodeRequire('assert'); });

@@ -1,0 +1,1 @@
+define('https', function() { return window.nodeRequire('https'); });

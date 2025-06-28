@@ -1,0 +1,54 @@
+status-tip {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 2;
+    transform: translate(-50%, 100%);
+    padding: 18px;
+    width: 280px;
+    background: #fff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: 1px solid #D9E2EB;
+    font-family: Lato-Regular;
+    font-size: 10px;
+    color: rgba(16, 49, 55, 0.5);
+    letter-spacing: 0.5px;
+    transform: translate(-50%, 0);
+    transition-delay: 0s;
+
+    strong {
+        display: block;
+        font-weight: 900;
+        font-size: 14px;
+        color: #02394A;
+        letter-spacing: 0.5px;
+        margin-bottom: 7px;
+    }
+    
+    .status-ring {
+        float: left;
+        margin-right: 18px;
+        display: block;
+    }
+}
+
+@keyframes status-ring-dash {
+  	0% {
+		  stroke-dashoffset: 100;
+  	}
+
+  	50% {
+    	  stroke-dashoffset: 25;
+  	}
+
+  	100% {
+        stroke-dashoffset: 100;
+  	}
+}
+
+@keyframes status-ring-rotate {
+  	to {
+  		transform: rotate(360deg);
+  	}
+}

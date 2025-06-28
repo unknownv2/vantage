@@ -1,0 +1,15 @@
+<template>
+    <require from="./app.css"></require>
+    <require from="./resources/elements/app-header"></require>
+    <require from="./resources/elements/sidebar.html"></require>
+
+    <div class="app-layout">
+        <app-header></app-header>
+        <div class="app-bottom">
+            <sidebar></sidebar>
+            <div class="app-content">
+                <router-view></router-view>
+            </div>
+        </div>
+    </div>
+</template>

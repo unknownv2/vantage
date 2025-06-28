@@ -1,0 +1,1 @@
+define('buffer', function() { return window.nodeRequire('buffer'); });

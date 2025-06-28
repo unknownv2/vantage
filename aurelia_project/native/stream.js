@@ -1,0 +1,1 @@
+define('stream', function() { return window.nodeRequire('stream'); });

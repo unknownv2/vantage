@@ -1,0 +1,1 @@
+define('electron', function() { return window.nodeRequire('electron'); });

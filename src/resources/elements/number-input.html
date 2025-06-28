@@ -1,0 +1,5 @@
+<template class="${disabled ? 'disabled' : ''}">
+    <button click.delegate="subtract()" class="decrement">-</button>
+    <input type="number" value.bind="value">
+    <button click.delegate="add()" class="increment">+</button>
+</template>

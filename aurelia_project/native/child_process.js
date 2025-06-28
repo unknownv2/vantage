@@ -1,0 +1,1 @@
+define('child_process', function() { return window.nodeRequire('child_process'); });

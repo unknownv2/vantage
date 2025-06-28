@@ -1,0 +1,51 @@
+<template>
+	<require from="./install-dialog.css"></require>
+
+	<div class="install-dialog">
+		<button class="close-button" click.delegate="close()">
+			<inline-svg src="icons/close.svg"></inline-svg>
+		</button>
+
+		<section if.bind="!fetching && !editor">
+			<div class="install-url">
+				<form submit.delegate="fetchEditor(editorUrl)">
+					<input type="text" value.bind="editorUrl" placeholder="github:username/repo">
+					<button disabled.bind="!editorUrl">Install</button>
+				</form>
+			</div>
+			<div class="actions">
+				<a external-href="https://github.com/unknownv2/editor-skeleton">Create an Editor</a>
+				<button class="install-button install-local-button">
+					<label>
+						<input type="file" webkitdirectory files.bind="editorPath" change.delegate="installLocalEditor()">
+						<span>Install Local Editor</span>
+					</label>
+				</button>
+			</div>
+		</section>
+
+		<section if.bind="fetching" class="loading">
+			<status-ring></status-ring>
+		</section>
+
+		<section if.bind="!fetching && editor" class="install">
+				<img src.bind="editor.thumbnailUrl">
+				<div class="info">
+					<h1 class="title">${editor.game}</h1>
+					<h2>${editor.name} by ${editor.author}</h2>
+
+					<button if.bind="!installed" class="install-button ${installing ? 'installing' : ''}" click.delegate="installEditor(editor.provider, editor.locator)">
+						${installing ? 'Installing' : 'Install Editor'}
+						<status-ring if.bind="installing"></status-ring>
+					</button>
+					<button if.bind="installed && !editor.official" class="install-button" click.delegate="uninstallEditor(editor)">
+						Uninstall
+						<status-ring if.bind="installing"></status-ring>
+					</button>
+					<button if.bind="editor.homepage" class="install-button" click.delegate="openHomepage(editor)">
+						Homepage
+					</button>
+				</div>
+		</section>
+	</div>
+</template>

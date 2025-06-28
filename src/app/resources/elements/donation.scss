@@ -1,0 +1,102 @@
+@import "../../utilities";
+
+donation {
+	display: block;
+	width: 100%;
+	padding: 16px 24px;
+	background: #001b4d;
+
+	.goal {
+		@extend .clearfix;
+
+		.label {
+			font-size: 11px;
+			color: #fff;
+			letter-spacing: 0.5px;
+			float: left;
+		}
+
+		.value {
+			font-weight: bold;
+			font-size: 11px;
+			color: #39AF45;
+			float: right;
+
+			.slash {
+				color: #275B65;
+			}
+
+			.total {
+				color: #fff;
+			}
+		}
+	}
+
+	.progress {
+		width: 100%;
+		height: 7px;
+		border-radius: 3.5px;
+		background: #103137;
+		margin: 10px 0 16px 0;
+
+		.value {
+			height: 7px;
+			border-radius: 3.5px;
+			background: #40AC3F;
+			transition: width 0.5s;
+		}
+	}
+
+	button {
+		display: block;
+		width: 100%;
+		height: 40px;
+		position: relative;
+		text-align: center;
+		background-image: linear-gradient(-133deg, #d74921 0%, #e6461a 100%);
+		border-radius: 3px;
+		border: 0;
+		font-weight: 900;
+		font-size: 12px;
+		color: #fff;
+		letter-spacing: 0.5px;
+		transition: box-shadow 0.3s;
+		line-height: 40px;
+
+		img {
+			float: left;
+			margin: 9px 10px;
+			width: 20px;
+			height: 20px;
+			vertical-align: middle;
+		}
+
+
+		&, * {
+			cursor: pointer;
+		}
+
+		/*&:before {
+			content: "";
+			width: 24px;
+			height: 24px;
+			background: url(static/images/patreon.svg);
+			position: absolute;
+			left: 16px;
+			top: 8px;
+		}*/
+
+		&:after {
+		    content: "";
+		    width: 40px;
+		    height: 40px;
+		    background: url(static/images/icons/caret-right.svg) 25px center no-repeat;
+		    display: inline-block;
+		    float: right;
+		}
+
+		&:hover {
+			box-shadow: 0 0 10px rgba(215, 73, 33, 0.8);
+		}
+	}
+}

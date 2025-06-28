@@ -1,0 +1,18 @@
+<template class="window-controls">
+    <require from="./window-controls.css"></require>
+
+	<ul>
+		<li if.bind="!minimized" click.trigger="minimize()">
+            <inline-svg src="icons/app-minimize.svg"></inline-svg>
+        </li>
+    	<li if.bind="!maximized" click.trigger="maximize()">
+            <inline-svg src="icons/app-maximize.svg"></inline-svg>  
+        </li>
+        <li if.bind="maximized" click.trigger="restore()">
+          <inline-svg src="icons/app-restore.svg"></inline-svg>  
+        </li>
+    	<li click.trigger="close()">
+            <inline-svg src="icons/app-close.svg"></inline-svg>  
+        </li>
+	</ul>
+</template>

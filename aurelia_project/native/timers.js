@@ -1,0 +1,1 @@
+define('timers', function() { return window.nodeRequire('timers'); });

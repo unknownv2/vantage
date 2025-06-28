@@ -1,0 +1,21 @@
+status-ring {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    transform-origin: 50% 50%;
+    animation: status-ring-rotate 1s linear infinite;
+    display: inline-block;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    path {
+        animation: status-ring-dash 4s infinite ease-in-out;
+        stroke-dasharray: 100;
+    }
+}

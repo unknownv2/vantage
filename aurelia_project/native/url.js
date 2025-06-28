@@ -1,0 +1,1 @@
+define('url', function() { return window.nodeRequire('url'); });

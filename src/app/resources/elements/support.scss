@@ -1,0 +1,50 @@
+@import "../../utilities";
+
+support {
+	display: block;
+	width: 100%;
+	padding: 16px 24px;
+	background: #001b4d;
+
+	button {
+		display: block;
+		width: 100%;
+		height: 40px;
+		position: relative;
+		text-align: center;
+		background-image: linear-gradient(-133deg, #238bb6 0%, #29abe1 100%);
+		border-radius: 3px;
+		border: 0;
+		font-weight: 900;
+		font-size: 12px;
+		color: #fff;
+		letter-spacing: 0.5px;
+		transition: box-shadow 0.3s;
+		line-height: 40px;
+
+		img {
+			float: left;
+			margin: 10px;
+			width: 20px;
+			height: 20px;
+			vertical-align: middle;
+		}
+
+		&, * {
+			cursor: pointer;
+		}
+
+        &:after {
+		    content: "";
+		    width: 40px;
+		    height: 40px;
+		    background: url(static/images/icons/caret-right.svg) 25px center no-repeat;
+		    display: inline-block;
+		    float: right;
+		}
+
+		&:hover {
+			box-shadow: 0 0 10px rgba(35, 139, 182, 0.8);
+		}
+	}
+}

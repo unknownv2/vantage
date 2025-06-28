@@ -1,0 +1,1 @@
+define('net', function() { return window.nodeRequire('net'); });

@@ -1,0 +1,1 @@
+define('tls', function() { return window.nodeRequire('tls'); });

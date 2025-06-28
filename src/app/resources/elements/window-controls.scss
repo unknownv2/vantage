@@ -1,0 +1,40 @@
+window-controls {
+	display: inline-block;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		transform: translate(0, -3px);
+
+		li {
+			display: inline-block;
+			margin-right: 14px;
+			width: 14px;
+			height: 14px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			* {
+				cursor: pointer;
+			}
+
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+
+			svg * {
+				transition: opacity 0.15s;
+			}
+
+			&:hover {
+				svg * {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

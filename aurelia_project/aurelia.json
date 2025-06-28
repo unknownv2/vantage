@@ -1,0 +1,284 @@
+{
+  "name": "vantage",
+  "type": "project:application",
+  "bundler": {
+    "id": "cli",
+    "displayName": "Aurelia-CLI"
+  },
+  "build": {
+    "targets": [
+      {
+        "id": "web",
+        "displayName": "Web",
+        "index": "index.html",
+        "baseDir": ".",
+        "output": "output"
+      }
+    ],
+    "options": {
+      "minify": "prod",
+      "sourcemaps": "local & dev & prod"
+    },
+    "bundles": [
+      {
+        "name": "app-bundle.js",
+        "source": [
+          "[**/*.js]",
+          "**/*.{css,html}"
+        ]
+      },
+      {
+        "name": "vendor-bundle.js",
+        "prepend": [
+          "node_modules/bluebird/js/browser/bluebird.js",
+          {
+            "path": "node_modules/aurelia-cli/lib/resources/scripts/configure-bluebird-no-long-stacktraces.js",
+            "env": "prod"
+          },
+          {
+            "path": "node_modules/aurelia-cli/lib/resources/scripts/configure-bluebird.js",
+            "env": "dev"
+          },
+          "node_modules/requirejs/require.js"
+        ],
+        "dependencies": [
+          "tslib",
+          "aurelia-animator-css",
+          "aurelia-binding",
+          "aurelia-bootstrapper",
+          "aurelia-dependency-injection",
+          "aurelia-event-aggregator",
+          "aurelia-fetch-client",
+          "aurelia-framework",
+          "aurelia-http-client",
+          "aurelia-history",
+          "aurelia-history-browser",
+          "aurelia-loader",
+          "aurelia-loader-default",
+          "aurelia-logging",
+          "aurelia-logging-console",
+          "aurelia-metadata",
+          "aurelia-pal",
+          "aurelia-pal-browser",
+          "aurelia-path",
+          "aurelia-polyfills",
+          "aurelia-route-recognizer",
+          "aurelia-router",
+          "aurelia-task-queue",
+          "aurelia-templating",
+          "aurelia-templating-binding",
+          "moment",
+          "extend",
+          "semver",
+
+          "yauzl",
+          "buffer-crc32",
+          "fd-slicer",
+          "pend",
+
+          "tarball-extract",
+          "minipass",
+          "yallist",
+          "safe-buffer",
+          "string_decoder",
+          "mkdirp",
+          {
+            "name": "tunnel",
+            "path": "../node_modules/tunnel",
+            "main": "index"
+          },
+          {
+            "name": "wget",
+            "path": "../node_modules/wget",
+            "main": "index"
+          },
+          {
+            "name": "minizlib",
+            "path": "../node_modules/minizlib",
+            "main": "index"
+          },
+          {
+            "name": "tar",
+            "path": "../node_modules/tar",
+            "main": "index"
+          },
+
+          {
+            "name": "text",
+            "path": "../node_modules/text/text",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "electron",
+            "path": "../aurelia_project/native/electron",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "assert",
+            "path": "../aurelia_project/native/assert",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "buffer",
+            "path": "../aurelia_project/native/buffer",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "child_process",
+            "path": "../aurelia_project/native/child_process",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "crypto",
+            "path": "../aurelia_project/native/crypto",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "events",
+            "path": "../aurelia_project/native/events",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "fs",
+            "path": "../aurelia_project/native/fs",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "http",
+            "path": "../aurelia_project/native/http",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "https",
+            "path": "../aurelia_project/native/https",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "net",
+            "path": "../aurelia_project/native/net",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "os",
+            "path": "../aurelia_project/native/os",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "path",
+            "path": "../aurelia_project/native/path",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "stream",
+            "path": "../aurelia_project/native/stream",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "timers",
+            "path": "../aurelia_project/native/timers",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "tls",
+            "path": "../aurelia_project/native/tls",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "url",
+            "path": "../aurelia_project/native/url",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "util",
+            "path": "../aurelia_project/native/util",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "zlib",
+            "path": "../aurelia_project/native/zlib",
+            "packageRoot": "../node_modules"
+          },
+          {
+            "name": "aurelia-templating-resources",
+            "path": "../node_modules/aurelia-templating-resources/dist/amd",
+            "main": "aurelia-templating-resources"
+          },
+          {
+            "name": "aurelia-templating-router",
+            "path": "../node_modules/aurelia-templating-router/dist/amd",
+            "main": "aurelia-templating-router"
+          },
+          {
+            "name": "aurelia-testing",
+            "path": "../node_modules/aurelia-testing/dist/amd",
+            "main": "aurelia-testing",
+            "env": "local & dev"
+          },
+          {
+            "name": "aurelia-dialog",
+            "path": "../node_modules/aurelia-dialog/dist/amd",
+            "main": "aurelia-dialog"
+          }
+        ]
+      }
+    ],
+    "loader": {
+      "type": "require",
+      "configTarget": "vendor-bundle.js",
+      "includeBundleMetadataInConfig": "auto",
+      "plugins": [
+        {
+          "name": "text",
+          "extensions": [
+            ".html",
+            ".css"
+          ],
+          "stub": true
+        }
+      ]
+    }
+  },
+  "platform": {
+    "id": "web",
+    "displayName": "Web",
+    "output": "output",
+    "index": "index.html"
+  },
+  "transpiler": {
+    "id": "typescript",
+    "displayName": "TypeScript",
+    "fileExtension": ".ts",
+    "dtsSource": [
+      "./custom_typings/**/*.d.ts"
+    ],
+    "source": "src/**/*.ts"
+  },
+  "markupProcessor": {
+    "id": "minimum",
+    "displayName": "Minimal Minification",
+    "fileExtension": ".html",
+    "source": "src/**/*.html"
+  },
+  "cssProcessor": {
+    "id": "sass",
+    "displayName": "Sass",
+    "fileExtension": ".scss",
+    "source": "src/**/*.scss"
+  },
+  "editor": {
+    "id": "vscode",
+    "displayName": "Visual Studio Code"
+  },
+  "unitTestRunner": {
+    "id": "none",
+    "displayName": "None"
+  },
+  "paths": {
+    "root": "src",
+    "editors": "editor/titles",
+    "resources": "resources",
+    "elements": "resources/elements",
+    "attributes": "resources/custom-attributes",
+    "valueConverters": "resources/value-converters"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "package",
+  "description": "Packages the resulting code and resources into a user-installable application.",
+  "flags": []
+}

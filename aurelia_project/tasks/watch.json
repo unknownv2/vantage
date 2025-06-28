@@ -1,0 +1,11 @@
+{
+  "name": "watch",
+  "description": "Builds and watches all application assets for changes.",
+  "flags": [
+    {
+      "name": "env",
+      "description": "Sets the build environment.",
+      "type": "string"
+    }
+  ]
+}

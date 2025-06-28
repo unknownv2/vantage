@@ -1,0 +1,1 @@
+define('events', function() { return window.nodeRequire('events'); });
